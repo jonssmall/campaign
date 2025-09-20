@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>{{title}}</title>
+
+    <!-- Structured Data for Endorsements Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{title}}",
+      "url": "https://anthonycolucciward1council.com/endorsements/",
+      "description": "{{description}}",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Anthony Colucci for Ward 1",
+        "url": "https://anthonycolucciward1council.com/"
+      },
+      "mainEntity": {
+        "@type": "Person",
+        "name": "{{candidateName}}",
+        "jobTitle": "Candidate for {{office}}",
+        "image": "https://anthonycolucciward1council.com/images/social-headshot.jpg",
+        "url": "https://anthonycolucciward1council.com/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toms River",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
+        }
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anthonycolucciward1council.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Endorsements",
+            "item": "https://anthonycolucciward1council.com/endorsements/"
+          }
+        ]
+      },
+      "about": {
+        "@type": "PoliticalParty",
+        "name": "Community Endorsements",
+        "description": "Organizations and community leaders supporting Anthony Colucci for Ward 1 Council"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Colucci for Council Committee",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toms River",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
+
+    <!-- Political Candidate Structured Data for Endorsements Context -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{candidateName}}",
+      "jobTitle": "Candidate for {{office}}",
+      "description": "Community-endorsed candidate with proven leadership experience",
+      "url": "https://anthonycolucciward1council.com/",
+      "image": "https://anthonycolucciward1council.com/images/social-headshot.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toms River",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Colucci for Council Committee"
+      },
+      "award": "15+ years of community service",
+      "knowsAbout": [
+        "Community Leadership",
+        "Local Government",
+        "Public Service",
+        "Ward 1 Issues",
+        "Municipal Services"
+      ],
+      "seeks": {
+        "@type": "Role",
+        "roleName": "Council Member",
+        "namedPosition": "Ward 1 Council"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "{{campaignPhone}}",
+        "email": "{{campaignEmail}}",
+        "contactType": "Campaign Headquarters"
+      },
+      "sameAs": [
+        "https://www.facebook.com/{{facebook}}",
+        "https://twitter.com/{{twitter}}",
+        "https://www.instagram.com/{{instagram}}"
+      ],
+      "potentialAction": [
+        {
+          "@type": "EndorseAction",
+          "name": "Endorse Campaign",
+          "description": "Support Anthony Colucci for Ward 1 Council"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Sticky Header - positioned outside for proper sticky behavior -->
+    {{> header}}
+
+    <!-- Fixed Background Image - stays in place while content scrolls -->
+    <div class="fixed inset-0 z-0">
+        <img src="/images/toms-river-wide.webp" alt="Professional politician at podium"
+            class="w-full h-full object-cover object-[center_20%]" />
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-800/85 via-gray-800/75 to-gray-700/70"></div>
+    </div>
+
+    <main class="mb-12">
+        <section class="relative">
+            <div class="relative z-20 pt-20 pb-16">
+                <!-- Hero Content -->
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center !py-16 relative">
+                    <!-- Four-sided gradient overlay for text darkening -->
+                    <div class="absolute inset-0 pointer-events-none" 
+                         style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 60%, transparent 100%);"></div>
+                    
+                    <!-- Content with higher z-index to appear above gradient -->
+                    <div class="relative z-10">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                        Endorsements
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white max-w-3xl mx-auto leading-relaxed">
+                        Under Construction
+                    </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - appears above the fixed background -->
+    <div class="relative z-30">
+        {{> footer}}
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

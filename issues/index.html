@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>{{title}}</title>
+
+    <!-- Structured Data for Issues/Platform Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{title}}",
+      "url": "https://anthonycolucciward1council.com/issues/",
+      "description": "{{description}}",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Anthony Colucci for Ward 1",
+        "url": "https://anthonycolucciward1council.com/"
+      },
+      "mainEntity": {
+        "@type": "Person",
+        "name": "{{candidateName}}",
+        "jobTitle": "Candidate for {{office}}",
+        "image": "https://anthonycolucciward1council.com/images/social-headshot.jpg",
+        "url": "https://anthonycolucciward1council.com/"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anthonycolucciward1council.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Issues & Platform",
+            "item": "https://anthonycolucciward1council.com/issues/"
+          }
+        ]
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Property Tax Relief",
+          "description": "Keeping costs down and working for tax relief using decades of finance experience"
+        },
+        {
+          "@type": "Thing",
+          "name": "Storm Recovery & Coastal Resilience",
+          "description": "Comprehensive storm recovery programs and forward-thinking resilience infrastructure"
+        },
+        {
+          "@type": "Thing",
+          "name": "Government Transparency",
+          "description": "Making local government meetings more accessible and responsive to citizens"
+        },
+        {
+          "@type": "Thing",
+          "name": "Development Control",
+          "description": "Checking overdevelopment to maintain community character and small-town feel"
+        }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Colucci for Council Committee"
+      }
+    }
+    </script>
+
+    <!-- Political Platform Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PoliticalParty",
+      "name": "Anthony Colucci Platform for Ward 1",
+      "description": "Comprehensive platform addressing key issues facing Toms River Ward 1",
+      "url": "https://anthonycolucciward1council.com/issues/",
+      "member": {
+        "@type": "Person",
+        "name": "{{candidateName}}"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toms River",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Property Tax Relief",
+          "description": "Using finance experience to keep costs down and secure tax relief for residents"
+        },
+        {
+          "@type": "Thing", 
+          "name": "Storm Recovery & Coastal Resilience",
+          "description": "Enhanced flood protection, disaster relief funding, and climate-adaptive building codes"
+        },
+        {
+          "@type": "Thing",
+          "name": "Government Transparency",
+          "description": "Moving council meetings back to 7pm, responsive OPRA requests, and following Sunshine Law"
+        },
+        {
+          "@type": "Thing",
+          "name": "Development Control",
+          "description": "Sticking to Master Plan, judicious variance allocation, and stopping four-story+ buildings"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Political Candidate with Platform Focus -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{candidateName}}",
+      "jobTitle": "Candidate for {{office}}",
+      "description": "Experienced candidate with comprehensive platform for Ward 1 improvements",
+      "url": "https://anthonycolucciward1council.com/",
+      "image": "https://anthonycolucciward1council.com/images/social-headshot.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toms River",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Colucci for Council Committee"
+      },
+      "knowsAbout": [
+        "Property Tax Policy",
+        "Municipal Finance",
+        "Storm Recovery Planning",
+        "Coastal Resilience",
+        "Government Transparency",
+        "Zoning and Development",
+        "Community Planning",
+        "Local Government Operations"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Finance Professional",
+        "description": "Over 40 years in finance",
+        "skills": ["Financial Management", "Budget Analysis", "Cost Control"]
+      },
+      "seeks": {
+        "@type": "Role",
+        "roleName": "Council Member",
+        "namedPosition": "Ward 1 Council",
+        "description": "Seeking to implement comprehensive platform for Ward 1 improvements"
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Zoning Board of Adjustment",
+          "description": "Experience addressing overdevelopment concerns"
+        }
+      ],
+      "award": "15+ years of community service",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "{{campaignPhone}}",
+        "email": "{{campaignEmail}}",
+        "contactType": "Campaign Headquarters"
+      },
+      "sameAs": [
+        "https://www.facebook.com/{{facebook}}",
+        "https://twitter.com/{{twitter}}",
+        "https://www.instagram.com/{{instagram}}"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Sticky Header - positioned outside for proper sticky behavior -->
+    {{> header}}
+
+    <!-- Fixed Background Image - stays in place while content scrolls -->
+    <div class="fixed inset-0 z-0">
+        <img src="/images/toms-river-wide.webp" alt="Professional politician at podium"
+            class="w-full h-full object-cover object-[center_20%]" />
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-800/85 via-gray-800/75 to-gray-700/70"></div>
+    </div>
+
+    <main class="mb-12">
+        <section class="relative">
+            <div class="relative z-20 pt-20 pb-16">
+                <!-- Hero Content -->
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center !py-16 relative">
+                    <!-- Four-sided gradient overlay for text darkening -->
+                    <div class="absolute inset-0 pointer-events-none"
+                        style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 60%, transparent 100%);">
+                    </div>
+
+                    <!-- Content with higher z-index to appear above gradient -->
+                    <div class="relative z-10">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                            Our Platform for Toms River
+                        </h1>
+                        <p class="text-lg sm:text-xl text-white max-w-3xl mx-auto leading-relaxed">
+                            Building stronger, more resilient communities across Ward 1.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Issues Content with Glass Pane Effects -->
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 space-y-8 sm:space-y-12">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                        <!-- Glass Pane Text Content -->
+                        <div class="flex flex-col gap-4">
+                            <div class="backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 sm:p-8">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                    Property Tax Relief
+                                </h2>
+                                <p class="text-base sm:text-lg text-white mb-4 leading-relaxed">
+                                    We are all feeling the squeeze of rising costs and local property taxes are no help
+                                    to our budgets. We need to keep costs down, I will use my decades of experience in
+                                    Finance to keep prices in check and work for tax relief.
+                                </p>
+                                <ul class="space-y-2 text-sm sm:text-base text-white-700">
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Keep costs down
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Secure tax relief
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Curb spending
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 sm:p-8">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                    Storm Recovery & Coastal Resilience
+                                </h2>
+                                <p class="text-base sm:text-lg text-white mb-4 leading-relaxed">
+                                    New Jersey's coastline is our greatest asset and our most vulnerable point. We need
+                                    comprehensive storm recovery programs and forward-thinking resilience
+                                    infrastructure.
+                                </p>
+                                <ul class="space-y-2 text-sm sm:text-base text-white-700">
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Enhanced flood protection systems
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Streamlined disaster relief funding
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Climate-adaptive building codes
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <!-- Image Container - Constrained to Left Column Height -->
+                        <div class="lg:h-0 lg:min-h-full flex items-center justify-center">
+                            <img src="/images/dune-grass.jpg"
+                                alt="Coastal dune grass in Toms River, representing storm recovery and environmental resilience efforts"
+                                class="w-full md:max-w-md lg:h-full max-h-full object-cover rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 space-y-8 sm:space-y-12">
+
+                    <!-- Glass Pane Around Text Only -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                        <!-- Glass Pane Text Content -->
+                        <div class="flex flex-col gap-4">
+                            <div class="backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 sm:p-8">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                    Transparency in Local Government
+                                </h2>
+                                <p class="text-base sm:text-lg text-white mb-4 leading-relaxed">
+                                    Now more than ever we need transparency in all levels of government especially at
+                                    the local level. We need to make our meetings more accessible, not less.
+                                </p>
+                                <ul class="space-y-2 text-sm sm:text-base text-white-700">
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Move the council meeting back to 7pm
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Be responsive to OPRA requests
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Abide by the Sun Shine Law
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 sm:p-8">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                    Check Overdevelopment
+                                </h2>
+                                <p class="text-base sm:text-lg text-white mb-4 leading-relaxed">
+                                    My time on the Zoning Board of Adjustment has shown that I take seriously the
+                                    problems of Overdevelopment. We need to keep our small town feel and I will continue
+                                    this fight on the Council.
+                                </p>
+                                <ul class="space-y-2 text-sm sm:text-base text-white-700">
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Stick to the Master Plan
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Be judicious in variance allocation
+                                    </li>
+                                    <li class="flex items-start text-white">
+                                        <span class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mt-1 mr-3"></span>
+                                        Stop Four-Story and up buildings
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <!-- Image Container - Constrained to Left Column Height -->
+                        <div class="lg:h-0 lg:min-h-full flex items-center justify-center">
+                            <img src="/images/garden-1-cropped.jpg"
+                                alt="Beautiful community garden in Toms River Ward 1, showcasing tourism and neighborhood beautification efforts"
+                                class="w-full md:max-w-md lg:h-full max-h-full object-cover rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - appears above the fixed background -->
+    <div class="relative z-30">
+        {{> footer}}
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll offset for sticky header - ensures anchored sections aren't hidden behind header */
+#about-section {
+  scroll-margin-top: 4rem; /* Adjust based on your header height - roughly 96px */
+}
+
+/* Apply to all potential anchor targets for consistency */
+section[id] {
+  scroll-margin-top: 4rem;
+}
