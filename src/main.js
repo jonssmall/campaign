@@ -7,6 +7,7 @@ const mobileMenu = document.querySelector('#mobile-menu')
 if (mobileMenuButton && mobileMenu) {
   mobileMenuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden')
+    mobileMenuButton.classList.toggle('opened');
   })
 
   // Close mobile menu when clicking on a link
@@ -14,6 +15,7 @@ if (mobileMenuButton && mobileMenu) {
   mobileMenuLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden')
+      mobileMenuButton.classList.remove('opened');
     })
   })
 }
@@ -101,6 +103,11 @@ if (mobileAboutButton) {
     const mobileMenu = document.querySelector('#mobile-menu')
     if (mobileMenu) {
       mobileMenu.classList.add('hidden')
+    }
+
+    const mobileMenuButton = document.querySelector('#mobile-menu-button')
+    if (mobileMenuButton) {
+      mobileMenuButton.classList.remove('opened');
     }
     
     // Then handle the navigation/scrolling

@@ -11,3 +11,47 @@
 section[id] {
   scroll-margin-top: 4rem;
 }
+
+
+.line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 10;
+  transition: stroke-dasharray .3s ease-out, stroke-dashoffset .4s ease-out
+}
+
+.line1 {
+  stroke-dasharray: 60 207
+}
+
+.line1,
+.line2 {
+  stroke-width: 10
+}
+
+.line2 {
+  stroke-dasharray: 60 60
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 10
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 10
+}
+
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 10
+}
+
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 10
+}
