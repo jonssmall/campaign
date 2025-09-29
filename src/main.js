@@ -55,19 +55,32 @@ if (desktopHeaderBg) {
   updateDesktopHeader()
 }
 
-// Learn About Anthony smooth scroll functionality
+// Learn About Anthony smooth scroll functionality (mobile, tablet, and desktop)
 const learnAboutButton = document.querySelector('#learn-about-button')
+const learnAboutButtonMobile = document.querySelector('#learn-about-button-mobile')
+const learnAboutButtonTablet = document.querySelector('#learn-about-button-tablet')
+
+function handleLearnAboutClick() {
+  const aboutSection = document.querySelector('#about-section')
+  if (aboutSection) {
+    // CSS scroll-margin-top handles the header offset automatically
+    aboutSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
+
 if (learnAboutButton) {
-  learnAboutButton.addEventListener('click', () => {
-    const aboutSection = document.querySelector('#about-section')
-    if (aboutSection) {
-      // CSS scroll-margin-top handles the header offset automatically
-      aboutSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
-  })
+  learnAboutButton.addEventListener('click', handleLearnAboutClick)
+}
+
+if (learnAboutButtonMobile) {
+  learnAboutButtonMobile.addEventListener('click', handleLearnAboutClick)
+}
+
+if (learnAboutButtonTablet) {
+  learnAboutButtonTablet.addEventListener('click', handleLearnAboutClick)
 }
 
 // Header "About Anthony" buttons smooth scroll functionality
