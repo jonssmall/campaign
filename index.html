@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    {{> head}}
-    <title>{{title}}</title>
 
-    <!-- Structured Data for Political Candidate Homepage -->
-    <script type="application/ld+json">
+<head>
+  {{> head}}
+  <title>{{title}}</title>
+
+  <!-- Structured Data for Political Candidate Homepage -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org               
       "@type": "Person",
@@ -102,8 +103,8 @@
     }
     </script>
 
-    <!-- Website Structured Data -->
-    <script type="application/ld+json">
+  <!-- Website Structured Data -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -123,8 +124,8 @@
     }
     </script>
 
-    <!-- Organization/Campaign Structured Data -->
-    <script type="application/ld+json">
+  <!-- Organization/Campaign Structured Data -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -158,390 +159,443 @@
     }
     </script>
 
-    <!-- Preload critical hero images based on device -->
-    <link rel="preload" as="image" href="/images/bay.webp" media="(min-width: 1024px)">
-    <link rel="preload" as="image" href="/images/.JPG" media="(min-width: 640px) and (max-width: 1023px)">
-    <link rel="preload" as="image" href="/images/optimized/toms-river-shot.webp" media="(max-width: 639px)">
-  </head>
-  <body>
-    <!-- Sticky Header - positioned outside for proper sticky behavior -->
-    {{> header}}
+  <!-- Preload critical hero images based on device -->
+  <link rel="preload" as="image" href="/images/bay.webp" media="(min-width: 1024px)">
+  <link rel="preload" as="image" href="/images/.JPG" media="(min-width: 640px) and (max-width: 1023px)">
+  <link rel="preload" as="image" href="/images/optimized/toms-river-shot.webp" media="(max-width: 639px)">
+</head>
 
-    <!-- Mobile Hero Section (up to sm) -->
-    <section class="relative min-h-screen overflow-hidden -mt-20 block sm:hidden">
-      <!-- Background Image - extends upward to show behind header -->
-      <div class="absolute inset-0 z-0 -top-20 h-[calc(100%+5rem)]">
-        <img 
-          id="mobile-hero-img"
-          data-src="/images/optimized/toms-river-shot.webp" 
-          alt="Aerial view of Toms River locality." 
-          class="w-full h-full object-cover object-[center_20%]"
-          loading="lazy"
-        />
-        <!-- Dark overlay for text readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-800/80 via-gray-900/90 to-gray-800/80"></div>
+<body>
+  <!-- Sticky Header - positioned outside for proper sticky behavior -->
+  {{> header}}
+
+  <!-- Mobile Hero Section (up to sm) -->
+  <section class="relative min-h-screen overflow-hidden -mt-20 block sm:hidden">
+    <!-- Mobile Hero Content -->
+    <main class="relative z-10 bg-blue-900 flex items-center justify-center min-h-screen pt-20">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-sm mx-auto">
+
+          <!-- Candidate Profile Image -->
+          <figure class="mt-6 relative">
+            <div class="relative inline-block">
+              <img 
+                src="/images/optimized/social-headshot.webp"
+                alt="Anthony Colucci, candidate for Toms River Ward 1 Council - professional headshot"
+                class="w-64 h-64 object-cover border-4 border-white/20 shadow-2xl mx-auto block"
+                loading="eager"
+              />
+            </div>
+            <figcaption class="sr-only">Official campaign photo of Anthony Colucci</figcaption>
+          </figure>
+
+          <!-- Primary Call-to-Action -->
+          <section class="mb-6" aria-label="Primary campaign actions">
+            <a 
+              href="https://politics.raisethemoney.com/en/acolucci/"
+              class="relative bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-2xl flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-red-500/50 active:scale-95 transition-transform duration-150"
+              role="button"
+              aria-label="Donate to Anthony Colucci's campaign"
+            >
+              <!-- Icon with simple styling -->
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              
+              <!-- Button text -->
+              <span class="font-extrabold tracking-wide">
+                Donate Now
+              </span>
+            </a>
+          </section>
+
+
+          <!-- Main Heading -->
+          <h1 class="text-3xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+            {{candidateName}}
+          </h1>
+
+          <h2 class="text-lg font-semibold mb-3 text-yellow-300 drop-shadow-lg">
+            for {{office}}
+          </h2>
+
+          <p class="text-base font-bold mb-6 text-white drop-shadow-lg">
+            {{slogan}}
+          </p>
+
+          <!-- Campaign Description -->
+          <p class="text-sm mb-8 text-white font-medium leading-relaxed drop-shadow-lg">
+            {{experience}} bringing proven leadership and community-focused solutions to Ward 1
+          </p>
+
+          <!-- Primary Call-to-Action Buttons - Mobile Layout -->
+          <div class="flex flex-col gap-3 mb-8">
+            <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer"
+              class="group bg-green-900 hover:bg-green-950 text-white font-bold py-4 px-6 rounded-lg text-base shadow-xl transition-colors duration-300 flex items-center justify-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Register to Vote
+            </a>
+
+            <a href="https://forms.gle/TxC79mS6ua4sQQG77"
+              class="group bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-lg text-base shadow-xl transition-colors duration-300 flex items-center justify-center">
+              Join Anthony
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Secondary Actions -->
+          <div class="flex flex-col gap-3 justify-center items-center mb-6">
+            <button id="learn-about-button-mobile"
+              class="text-white hover:text-yellow-300 font-medium text-sm underline decoration-1 underline-offset-2 transition-colors bg-transparent border-none cursor-pointer">
+              Learn About Anthony →
+            </button>
+            <a href="issues/"
+              class="text-white hover:text-yellow-300 font-medium text-sm underline decoration-1 underline-offset-2 transition-colors">
+              View Platform →
+            </a>
+          </div>
+        </div>
       </div>
+    </main>
+  </section>
 
-      <!-- Mobile Hero Content -->
-      <main class="relative z-10 flex items-center justify-center min-h-screen pt-20">
-        <div class="container mx-auto px-4 text-center">
-          <div class="max-w-sm mx-auto">
-            
+  <!-- Tablet Hero Section (sm to lg) - 2x2 Grid Layout -->
+  <section
+    class="relative min-h-screen hidden sm:block lg:hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
+
+    <!-- Tablet Hero Content - 2x2 Grid -->
+    <main class="relative z-10 flex items-center justify-center min-h-screen pt-20 pb-20">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto min-h-[70vh]">
+
+          <!-- Top Left: Main Text Content -->
+          <div class="flex flex-col justify-center text-left space-y-4">
             <!-- Main Heading -->
-            <h1 class="text-3xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight text-white">
               {{candidateName}}
             </h1>
-            
-            <h2 class="text-lg font-semibold mb-3 text-yellow-300 drop-shadow-lg">
+
+            <h2 class="text-xl md:text-2xl font-semibold text-yellow-300">
               for {{office}}
             </h2>
-            
-            <p class="text-base font-bold mb-6 text-white drop-shadow-lg">
+
+            <p class="text-lg md:text-xl font-bold text-white">
               {{slogan}}
             </p>
-            
+
             <!-- Campaign Description -->
-            <p class="text-sm mb-8 text-white font-medium leading-relaxed drop-shadow-lg">
+            <p class="text-base md:text-lg text-white font-medium leading-relaxed">
               {{experience}} bringing proven leadership and community-focused solutions to Ward 1
             </p>
-            
-            <!-- Primary Call-to-Action Buttons - Mobile Layout -->
-            <div class="flex flex-col gap-3 mb-8">
-              <a href="https://politics.raisethemoney.com/en/acolucci/" class="group bg-red-900 hover:bg-red-950 text-white font-bold py-4 px-6 rounded-lg text-base shadow-xl transition-colors duration-300 flex items-center justify-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                </svg>
-                Donate Now
-              </a>
-              
-              <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer" class="group bg-green-900 hover:bg-green-950 text-white font-bold py-4 px-6 rounded-lg text-base shadow-xl transition-colors duration-300 flex items-center justify-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                Register to Vote
-              </a>
-              
-              <a href="https://forms.gle/TxC79mS6ua4sQQG77" class="group bg-blue-900 hover:bg-blue-950 text-white font-bold py-4 px-6 rounded-lg text-base shadow-xl transition-colors duration-300 flex items-center justify-center">
-                Join Anthony
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </a>
-            </div>
-            
+
             <!-- Secondary Actions -->
-            <div class="flex flex-col gap-3 justify-center items-center mb-6">
-              <button id="learn-about-button-mobile" class="text-white hover:text-yellow-300 font-medium text-sm underline decoration-1 underline-offset-2 transition-colors bg-transparent border-none cursor-pointer">
+            <div class="flex flex-col gap-3 pt-4">
+              <button id="learn-about-button-tablet"
+                class="text-white hover:text-yellow-300 font-semibold text-lg underline decoration-2 underline-offset-4 transition-colors bg-transparent border-none cursor-pointer text-left">
                 Learn About Anthony →
               </button>
-              <a href="issues/" class="text-white hover:text-yellow-300 font-medium text-sm underline decoration-1 underline-offset-2 transition-colors">
+              <a href="issues/"
+                class="text-white hover:text-yellow-300 font-semibold text-lg underline decoration-2 underline-offset-4 transition-colors">
                 View Platform →
               </a>
             </div>
           </div>
-        </div>
-      </main>
-    </section>
 
-    <!-- Tablet Hero Section (sm to lg) - 2x2 Grid Layout -->
-    <section class="relative min-h-screen hidden sm:block lg:hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
-      
-      <!-- Tablet Hero Content - 2x2 Grid -->
-      <main class="relative z-10 flex items-center justify-center min-h-screen pt-20 pb-20">
-        <div class="container mx-auto px-6">
-          <div class="grid grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto min-h-[70vh]">
-            
-            <!-- Top Left: Main Text Content -->
-            <div class="flex flex-col justify-center text-left space-y-4">
-              <!-- Main Heading -->
-              <h1 class="text-4xl md:text-5xl font-bold leading-tight text-white">
-                {{candidateName}}
-              </h1>
-              
-              <h2 class="text-xl md:text-2xl font-semibold text-yellow-300">
-                for {{office}}
-              </h2>
-              
-              <p class="text-lg md:text-xl font-bold text-white">
-                {{slogan}}
-              </p>
-              
-              <!-- Campaign Description -->
-              <p class="text-base md:text-lg text-white font-medium leading-relaxed">
-                {{experience}} bringing proven leadership and community-focused solutions to Ward 1
-              </p>
-              
-              <!-- Secondary Actions -->
-              <div class="flex flex-col gap-3 pt-4">
-                <button id="learn-about-button-tablet" class="text-white hover:text-yellow-300 font-semibold text-lg underline decoration-2 underline-offset-4 transition-colors bg-transparent border-none cursor-pointer text-left">
-                  Learn About Anthony →
-                </button>
-                <a href="issues/" class="text-white hover:text-yellow-300 font-semibold text-lg underline decoration-2 underline-offset-4 transition-colors">
-                  View Platform →
-                </a>
-              </div>
+          <!-- Top Right: Placeholder Image -->
+          <div class="flex items-center justify-center">
+            <div
+              class="w-full max-w-sm bg-white/10 rounded-lg border-2 border-white/20 backdrop-blur-sm flex items-center justify-center">
+              <img src="/images/optimized/Ward_1_Anthony_Colucci_D.webp" />
             </div>
-            
-            <!-- Top Right: Placeholder Image -->
-            <div class="flex items-center justify-center">
-              <div class="w-full max-w-sm bg-white/10 rounded-lg border-2 border-white/20 backdrop-blur-sm flex items-center justify-center">
-                <img src="/images/optimized/Ward_1_Anthony_Colucci_D.webp" />
-              </div>
-            </div>
-            
-            <!-- Bottom: Full-width Call-to-Action Buttons Row -->
-            <div class="col-span-2 flex justify-center items-end pt-8">
-              <div class="grid grid-cols-3 gap-4 w-full max-w-4xl">
-                <a href="https://politics.raisethemoney.com/en/acolucci/" class="group bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                  </svg>
-                  Donate Now
-                </a>
-                
-                <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer" class="group bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                  </svg>
-                  Register to Vote
-                </a>
-                
-                <a href="https://forms.gle/TxC79mS6ua4sQQG77" class="group bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
-                  Join Anthony
-                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
           </div>
+
+          <!-- Bottom: Full-width Call-to-Action Buttons Row -->
+          <div class="col-span-2 flex justify-center items-end pt-8">
+            <div class="grid grid-cols-3 gap-4 w-full max-w-4xl">
+              <a href="https://politics.raisethemoney.com/en/acolucci/"
+                class="group bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                Donate Now
+              </a>
+
+              <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer"
+                class="group bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Register to Vote
+              </a>
+
+              <a href="https://forms.gle/TxC79mS6ua4sQQG77"
+                class="group bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg text-base shadow-2xl transition-colors duration-300 flex items-center justify-center">
+                Join Anthony
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
         </div>
-      </main>
-    </section>
-
-    <!-- Desktop Hero Section - Two Column Layout (lg and above) -->
-    <section class="relative min-h-[120vh] overflow-hidden -mt-20 hidden lg:block">
-      <!-- Background Image - extends upward to show behind header -->
-      <div class="absolute inset-0 z-0 -top-20 h-[calc(100%+8rem)]">
-        <img 
-          id="desktop-hero-img"
-          data-src="/images/bay.webp" 
-          alt="Anthony Colucci, candidate for Toms River Ward 1 Council, standing in front of scenic beachfront." 
-          class="w-full h-full object-cover object-[center_20%]"
-          loading="lazy"
-        />
-        <!-- Dark overlay for text readability -->
-        <!-- <div class="absolute inset-0 bg-gradient-to-r from-gray-800/80 via-gray-800/30 to-gray-800/0"></div> -->
       </div>
+    </main>
+  </section>
 
-      <!-- Desktop Hero Content - Two Columns -->
-      <main class="relative z-10 flex items-center justify-center min-h-[120vh] pt-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center max-w-7xl mx-auto">
-            
-            <!-- Left Column - Content -->
-            <div class="text-center lg:text-left"> 
-            
+  <!-- Desktop Hero Section - Two Column Layout (lg and above) -->
+  <section class="relative min-h-[120vh] overflow-hidden -mt-20 hidden lg:block">
+    <!-- Background Image - extends upward to show behind header -->
+    <div class="absolute inset-0 z-0 -top-20 h-[calc(100%+8rem)]">
+      <img id="desktop-hero-img" data-src="/images/bay.webp"
+        alt="Anthony Colucci, candidate for Toms River Ward 1 Council, standing in front of scenic beachfront."
+        class="w-full h-full object-cover object-[center_20%]" loading="lazy" />
+      <!-- Dark overlay for text readability -->
+      <!-- <div class="absolute inset-0 bg-gradient-to-r from-gray-800/80 via-gray-800/30 to-gray-800/0"></div> -->
+    </div>
+
+    <!-- Desktop Hero Content - Two Columns -->
+    <main class="relative z-10 flex items-center justify-center min-h-[120vh] pt-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center max-w-7xl mx-auto">
+
+          <!-- Left Column - Content -->
+          <div class="text-center lg:text-left">
+
             <!-- Main Heading -->
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 lg:mb-4 leading-tight text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.9), 0px 0px 12px rgba(0,0,0,0.7);">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 lg:mb-4 leading-tight text-white"
+              style="text-shadow: 2px 2px 8px rgba(0,0,0,0.9), 0px 0px 12px rgba(0,0,0,0.7);">
               {{candidateName}}
             </h1>
-            
-            <h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2 lg:mb-3 text-yellow-300" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.7);">
+
+            <h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2 lg:mb-3 text-yellow-300"
+              style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.7);">
               for {{office}}
             </h2>
-            
-            <p class="text-lg sm:text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-white" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,0.6);">
+
+            <p class="text-lg sm:text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-white"
+              style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,0.6);">
               {{slogan}}
             </p>
-            
+
             <!-- Campaign Description -->
-            <p class="text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 text-white font-bold leading-relaxed max-w-3xl mx-auto lg:mx-0" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8), 0px 0px 6px rgba(0,0,0,0.6);">
+            <p class="text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 text-white font-bold leading-relaxed max-w-3xl mx-auto lg:mx-0"
+              style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8), 0px 0px 6px rgba(0,0,0,0.6);">
               {{experience}} bringing proven leadership and community-focused solutions to Ward 1
             </p>
-            
+
             <!-- Primary Call-to-Action Buttons - 2 Column Flexbox Layout -->
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl mx-auto lg:mx-0 mb-6 lg:mb-8">
               <!-- Left Column: Donate Now and Register to Vote -->
               <div class="flex flex-col gap-3 flex-1">
-                <a href="https://politics.raisethemoney.com/en/acolucci/" class="group bg-red-800 hover:bg-red-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
+                <a href="https://politics.raisethemoney.com/en/acolucci/"
+                  class="group bg-red-800 hover:bg-red-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
                   <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                   Donate Now
                 </a>
-                
-                <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer" class="group bg-green-800 hover:bg-green-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
+
+                <a href="https://voter.svrs.nj.gov/register" target="_blank" rel="noopener noreferrer"
+                  class="group bg-green-800 hover:bg-green-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
                   <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   Register to Vote
                 </a>
               </div>
-              
+
               <!-- Right Column: Join Anthony -->
               <div class="flex flex-col gap-3 flex-1">
-                <a href="https://forms.gle/TxC79mS6ua4sQQG77" class="group bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
+                <a href="https://forms.gle/TxC79mS6ua4sQQG77"
+                  class="group bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 lg:py-4 px-6 lg:px-8 rounded-lg text-lg lg:text-xl shadow-2xl transition-colors duration-300 flex items-center justify-center">
                   Join Anthony
                   <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               </div>
             </div>
-            
+
             <!-- Secondary Actions -->
             <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center">
-              <button id="learn-about-button" class="text-white hover:text-yellow-300 font-bold text-lg lg:text-xl underline decoration-2 underline-offset-4 transition-all duration-300 bg-black/20 hover:bg-black/50 border-none cursor-pointer px-4 py-2 rounded-md backdrop-blur-sm" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.8), 0px 0px 20px rgba(0,0,0,0.6);">
+              <button id="learn-about-button"
+                class="text-white hover:text-yellow-300 font-bold text-lg lg:text-xl underline decoration-2 underline-offset-4 transition-all duration-300 bg-black/20 hover:bg-black/50 border-none cursor-pointer px-4 py-2 rounded-md backdrop-blur-sm"
+                style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.8), 0px 0px 20px rgba(0,0,0,0.6);">
                 Learn About Anthony →
               </button>
-              <span class="text-gray-200 hidden sm:inline font-bold text-xl" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,0.7);">•</span>
-              <a href="issues/" class="text-white hover:text-yellow-300 font-bold text-lg lg:text-xl underline decoration-2 underline-offset-4 transition-all duration-300 bg-black/20 hover:bg-black/50 px-4 py-2 rounded-md backdrop-blur-sm" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.8), 0px 0px 20px rgba(0,0,0,0.6);">
+              <span class="text-gray-200 hidden sm:inline font-bold text-xl"
+                style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,0.7);">•</span>
+              <a href="issues/"
+                class="text-white hover:text-yellow-300 font-bold text-lg lg:text-xl underline decoration-2 underline-offset-4 transition-all duration-300 bg-black/20 hover:bg-black/50 px-4 py-2 rounded-md backdrop-blur-sm"
+                style="text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.8), 0px 0px 20px rgba(0,0,0,0.6);">
                 View Platform →
               </a>
             </div>
           </div>
         </div>
-      </main>
-    </section>
+    </main>
+  </section>
 
-    <!-- About Anthony Section -->
-    <section id="about-section" class="py-12 sm:py-16 lg:py-20 bg-white">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-          
-          <!-- Two Column Layout -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
-            
-            <!-- Left Column - About Content -->
-            <div class="order-2 lg:order-1">
-              <div class="max-w-xl mx-auto lg:mx-0">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
-                  About Anthony Colucci
-                </h2>
-                
-                <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
-                  <p>
-                    Long term resident of Toms River, Anthony Colucci has dedicated over 15 years of his life to serving our community. As an over two decade resident of Ward 1, he understands the unique challenges and opportunities our neighborhood faces.
-                  </p>
-                  
-                  <p>
-                    Anthony's commitment to public service has been a throughline in his entire career when he volunteered his time with local organizations and community development initiatives. His hands-on approach and ability to bring people together have made him a trusted voice in our community.
-                  </p>
-                  
-                  <p>
-                    With a background in finance, community organizing and local government, Anthony has the experience and vision needed to tackle Ward 1's most pressing issues, from infrastructure improvements to economic development and public safety.
-                  </p>
-                  
-                  <p class="text-blue-600 font-semibold">
-                    "I'm running because I believe our community deserves leadership that listens, acts, and delivers results for every family in Ward 1."
-                  </p>
-                </div>
-                
-                <!-- Key Qualifications -->
-                <div class="mt-8">
-                  <h3 class="text-xl font-bold text-gray-800 mb-4">Experience & Qualifications</h3>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex items-start space-x-3">
-                      <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                      </div>
-                      <span class="text-gray-600">15+ Years Community Service</span>
+  <!-- About Anthony Section -->
+  <section id="about-section" class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+
+          <!-- Left Column - About Content -->
+          <div class="order-2 lg:order-1">
+            <div class="max-w-xl mx-auto lg:mx-0">
+              <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+                About Anthony Colucci
+              </h2>
+
+              <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  Long term resident of Toms River, Anthony Colucci has dedicated over 15 years of his life to serving
+                  our community. As an over two decade resident of Ward 1, he understands the unique challenges and
+                  opportunities our neighborhood faces.
+                </p>
+
+                <p>
+                  Anthony's commitment to public service has been a throughline in his entire career when he volunteered
+                  his time with local organizations and community development initiatives. His hands-on approach and
+                  ability to bring people together have made him a trusted voice in our community.
+                </p>
+
+                <p>
+                  With a background in finance, community organizing and local government, Anthony has the experience
+                  and vision needed to tackle Ward 1's most pressing issues, from infrastructure improvements to
+                  economic development and public safety.
+                </p>
+
+                <p class="text-blue-600 font-semibold">
+                  "I'm running because I believe our community deserves leadership that listens, acts, and delivers
+                  results for every family in Ward 1."
+                </p>
+              </div>
+
+              <!-- Key Qualifications -->
+              <div class="mt-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Experience & Qualifications</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="flex items-start space-x-3">
+                    <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd" />
+                      </svg>
                     </div>
-                    
-                    <div class="flex items-start space-x-3">
-                      <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                      </div>
-                      <span class="text-gray-600">Local Government Experience</span>
+                    <span class="text-gray-600">15+ Years Community Service</span>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd" />
+                      </svg>
                     </div>
-                    
-                    <div class="flex items-start space-x-3">
-                      <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                      </div>
-                      <span class="text-gray-600">Over 40 Year in Finance</span>
+                    <span class="text-gray-600">Local Government Experience</span>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd" />
+                      </svg>
                     </div>
-                    
-                    <div class="flex items-start space-x-3">
-                      <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                      </div>
-                      <span class="text-gray-600">Ward 1 Resident</span>
+                    <span class="text-gray-600">Over 40 Year in Finance</span>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd" />
+                      </svg>
                     </div>
+                    <span class="text-gray-600">Ward 1 Resident</span>
                   </div>
                 </div>
-                
-                <!-- Call to Action Button -->
-                <div class="mt-8">
-                  <a href="issues/" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
-                    Anthony's Platforms
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
+              </div>
+
+              <!-- Call to Action Button -->
+              <div class="mt-8">
+                <a href="issues/"
+                  class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+                  Anthony's Platforms
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
             </div>
-            
-            <!-- Right Column - Image Placeholder -->
-            <div class="order-1 lg:order-2">
-              <div class="relative">
-                <!-- Image Container with automatic carousel -->
-                <div class="aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none bg-gray-100 rounded-lg shadow-lg overflow-hidden relative">
-                  <!-- Carousel Images -->
-                  <img 
-                    id="carousel-img-1"
-                    src="/images/optimized/table.webp" 
-                    alt="Anthony Colucci, candidate for Toms River Ward 1 Council" 
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-100"
-                    loading="lazy"
-                  />
-                  <img 
-                    id="carousel-img-2"
-                    src="/images/optimized/governor.webp" 
-                    alt="Anthony Colucci with Governor" 
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-0"
-                    loading="lazy"
-                  />
-                  <img 
-                    id="carousel-img-3"
-                    src="/images/optimized/senator.webp" 
-                    alt="Anthony Colucci with Senator" 
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-0"
-                    loading="lazy"
-                  />
-                  
-                  <!-- Optional: Carousel indicators -->
-                  <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    <div id="indicator-1" class="w-2 h-2 rounded-full bg-black bg-opacity-70 transition-all duration-300"></div>
-                    <div id="indicator-2" class="w-2 h-2 rounded-full bg-black bg-opacity-30 transition-all duration-300"></div>
-                    <div id="indicator-3" class="w-2 h-2 rounded-full bg-black bg-opacity-30 transition-all duration-300"></div>
-                  </div>
-                </div>
-                
-                <!-- Decorative Element -->
-                <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-20 -z-10"></div>
-                <div class="absolute -top-4 -left-4 w-16 h-16 bg-yellow-100 rounded-full opacity-20 -z-10"></div>
-              </div>
-            </div>
-            
           </div>
+
+          <!-- Right Column - Image Placeholder -->
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <!-- Image Container with automatic carousel -->
+              <div
+                class="aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none bg-gray-100 rounded-lg shadow-lg overflow-hidden relative">
+                <!-- Carousel Images -->
+                <img id="carousel-img-1" src="/images/optimized/table.webp"
+                  alt="Anthony Colucci, candidate for Toms River Ward 1 Council"
+                  class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-100"
+                  loading="lazy" />
+                <img id="carousel-img-2" src="/images/optimized/governor.webp" alt="Anthony Colucci with Governor"
+                  class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-0"
+                  loading="lazy" />
+                <img id="carousel-img-3" src="/images/optimized/senator.webp" alt="Anthony Colucci with Senator"
+                  class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out opacity-0"
+                  loading="lazy" />
+
+                <!-- Optional: Carousel indicators -->
+                <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <div id="indicator-1" class="w-2 h-2 rounded-full bg-black bg-opacity-70 transition-all duration-300">
+                  </div>
+                  <div id="indicator-2" class="w-2 h-2 rounded-full bg-black bg-opacity-30 transition-all duration-300">
+                  </div>
+                  <div id="indicator-3" class="w-2 h-2 rounded-full bg-black bg-opacity-30 transition-all duration-300">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Decorative Element -->
+              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-20 -z-10"></div>
+              <div class="absolute -top-4 -left-4 w-16 h-16 bg-yellow-100 rounded-full opacity-20 -z-10"></div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    {{> footer}}
+  {{> footer}}
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
