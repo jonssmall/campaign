@@ -7,18 +7,8 @@
     <!-- Structured Data for Political Candidate Homepage -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org              </div>
-            </div>
-            
-            <!-- Right Column - Image/Media Space -->
-            <div class="hidden lg:block">
-              <div class="aspect-[4/5] w-full bg-black/20 rounded-lg border-2 border-white/20 backdrop-blur-sm flex items-center justify-center">
-                <p class="text-white/60 text-lg font-medium">Image Coming Soon</p>
-              </div>
-            </div>
-            
-          </div>
-        </div>      "@type": "Person",
+      "@context": "https://schema.org               
+      "@type": "Person",
       "name": "{{candidateName}}",
       "jobTitle": "Candidate for {{office}}",
       "description": "{{description}}",
@@ -167,6 +157,11 @@
       }
     }
     </script>
+
+    <!-- Preload critical hero images based on device -->
+    <link rel="preload" as="image" href="/images/bay.webp" media="(min-width: 1024px)">
+    <link rel="preload" as="image" href="/images/.JPG" media="(min-width: 640px) and (max-width: 1023px)">
+    <link rel="preload" as="image" href="/images/optimized/toms-river-shot.webp" media="(max-width: 639px)">
   </head>
   <body>
     <!-- Sticky Header - positioned outside for proper sticky behavior -->
