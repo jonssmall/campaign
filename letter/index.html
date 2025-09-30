@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <!-- Sticky Header - positioned outside for proper sticky behavior -->
+    {{> header}}
+
+    <!-- Fixed Background Image - stays in place while content scrolls -->
+    <div class="fixed inset-0 z-0">
+        <img src="/images/toms-river-wide.webp" alt="Professional politician at podium"
+            class="w-full h-full object-cover object-[center_20%]" />
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-800/85 via-gray-800/75 to-gray-700/70"></div>
+    </div>
+
+    <main class="mb-12">
+        <section class="relative">
+            <div class="relative z-20 pt-20 pb-16">
+                <!-- Hero Content -->
+                <div class="text-white container mx-auto px-4 sm:px-6 lg:px-8 !py-16 relative">
+                    <!-- Four-sided gradient overlay for text darkening -->
+                    <div class="absolute inset-0 pointer-events-none"
+                        style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 60%, transparent 100%);">
+                    </div>
+
+                    <!-- Content with higher z-index to appear above gradient -->
+                    <div class="relative z-10">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                            Open Letter to Ward 1
+                        </h1>
+                        <p>
+                            After over 40 successful years working in finance/accounting, we retired to Ortley Beach in
+                            2005. Budget
+                            control being my primary responsibility under various positions including, Director of
+                            Finance, Corporate
+                            Controller and Vice President of Finance.
+                        </p>
+                        <p>
+                            I am currently on the Toms River Zoning Board of Adjustment. I serve as President of the
+                            Ortley Beach Voters
+                            and Taxpayers Association and have been doing so for the past nine years. I am also a member
+                            of the Ocean
+                            County Business and Tourism Commission, Toms River Environmental Commission and a Rutgers
+                            Coastal
+                            Steward Alumni. I support and contribute my time to Re-Clam The Bay projects.
+                        </p>
+                        <p>
+                            <strong>
+                                In 2017 I ran for Ward One Council seat. Many of the issues we faced in 2017 are the
+                                same issues today.
+                            </strong>
+                        </p>
+                        <p>
+                            Ward One needs fresh leadership and a community first approach to Toms River Township. I am
+                            committed to
+                            bringing that fresh leadership and community first approach to the Toms River Township
+                            Council.
+                        </p>
+                        <p>
+                            We all love the Shore and the Bay. We know they need to be protected. Yet now, we must also
+                            factor in the
+                            cutbacks in funding the Federal Government has recently implemented. I will be the voice
+                            advocating for
+                            Ward One with the State Government. We must secure the funds and plans that we need to guard
+                            our homes
+                            and businesses. The livelihood of many businesses and billions of dollars in revenue is at
+                            stake. Billions more
+                            in shore community property values and Municipal tax revenue may also be lost.
+                        </p>
+                        <p>
+                            I will insist on a transparent government. Not only by increasing accessibility to Council
+                            meetings, but I will
+                            ensure that the public portion allows, enough time to hear Toms River Township residents
+                            speak. All major
+                            projects must be discussed openly and described clearly to residents. Very often residents
+                            feel their voices
+                            have not been counted before decisions are made which affect them.
+                        </p>
+                        <p>
+                            A background in finance has shown me how important it is to control budgets and the revenue
+                            that support
+                            the services of our town. I will work to ensure that Toms River Township's budget and taxes
+                            reflect the views
+                            of the residents.
+                        </p>
+                        <p>
+                            <strong>
+                                We have to promote and support local business in Ward One on both sides of the Bay.
+                            </strong>
+                        </p>
+                        <p>
+                            Outside of Ward One, we should look to develop Downtown Toms River as a community and
+                            business friendly
+                            environment that will attract people from all of Toms River Township. We cannot afford to
+                            return to the
+                            stagnant policies of past administrations. No large buildings that would overwhelm the town.
+                            I will look into
+                            LLC purchases that are turned into summer rentals. These rentals cause a variety of
+                            problems, such as late
+                            night noise and overburdened parking on our streets. Open space to walk and play is
+                            essential to developing
+                            and maintaining our community.
+                        </p>
+                        <p>
+                            I will support our police department as an independent force. We need to reconnect and
+                            recognize the
+                            community relations and open discussion we enjoyed with our Police Department in the past.
+                        </p>
+                        <p>
+                            As a full time Councilman, I will be responsive to all of the concerns Ward One Residents
+                            have. Not only will I
+                            attend community, committee and Council meetings regularly, I will maintain an open door to
+                            every Ward One
+                            resident.
+                        </p>
+                        <p>
+                            <strong>
+                                I will serve Ward One not One Party.
+                            </strong>
+                        </p>
+                        <p>
+                            Respectively Yours,
+                            <br/> 
+                            <em>Anthony L. Colucci</em> 
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - appears above the fixed background -->
+    <div class="relative z-30">
+        {{> footer}}
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -68,6 +68,15 @@ export default defineConfig({
           };
         }
 
+        if (pagePath.includes('letter/index.html')) {
+          return {
+            ...baseContext,
+            title: 'Open Letter - Anthony Colucci for Ward 1',
+            description: 'An open letter from Anthony Colucci to the residents of Toms River Ward 1. Learn about his vision and commitment to our community.',
+            canonical_path: 'letter/'
+          };
+        }
+
         // Default context for homepage
         return {
           ...baseContext,
@@ -92,6 +101,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         endorsements: resolve(__dirname, 'endorsements/index.html'),
         issues: resolve(__dirname, 'issues/index.html'),
+        letter: resolve(__dirname, 'letter/index.html'),
       }
     }
   }
