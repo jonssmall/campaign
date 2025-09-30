@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Desktop hero background - orientation-based images */
+.desktop-hero-bg {
+  background: url('/images/bay.webp') no-repeat center 20% / cover;
+}
+
+@media screen and (orientation: portrait) {
+  .desktop-hero-bg {
+    background: url('/images/bay-cropped.png') no-repeat center center / cover;
+  }
+}
+
 /* Scroll offset for sticky header - ensures anchored sections aren't hidden behind header */
 #about-section {
   scroll-margin-top: 4rem; /* Adjust based on your header height - roughly 96px */
