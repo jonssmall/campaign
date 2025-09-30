@@ -8,11 +8,13 @@
     "dev": "vite",
     "build": "node generate-seo-files.js && vite build",
     "preview": "vite preview",
-    "generate-seo": "node generate-seo-files.js"
+    "generate-seo": "node generate-seo-files.js",
+    "compress": "node shrink.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
+    "sharp": "^0.34.4",
     "tailwindcss": "^3.4.0",
     "vite": "^5.0.8",
     "vite-plugin-handlebars": "^2.0.0"
