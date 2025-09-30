@@ -1,5 +1,46 @@
 import './style.css'
 
+// Conditional Hero Image Loading - Only load the appropriate image for current device
+const loadHeroImage = () => {
+  const screenWidth = window.innerWidth
+  
+  // Get all hero images
+  const mobileHeroImg = document.getElementById('mobile-hero-img')
+  const tabletHeroImg = document.getElementById('tablet-hero-img')  
+  const desktopHeroImg = document.getElementById('desktop-hero-img')
+  
+  // Determine which image should load based on screen size
+  let activeImg = null
+  
+  if (screenWidth >= 1024) {
+    // Desktop - load desktop hero
+    activeImg = desktopHeroImg
+  } else if (screenWidth >= 640) {
+    // Tablet - load tablet hero
+    activeImg = tabletHeroImg
+  } else {
+    // Mobile - load mobile hero
+    activeImg = mobileHeroImg
+  }
+  
+  // Load only the active image
+  if (activeImg && activeImg.dataset.src && !activeImg.src) {
+    activeImg.src = activeImg.dataset.src
+    activeImg.loading = 'eager'
+    console.log(`Loading hero image for ${screenWidth >= 1024 ? 'desktop' : screenWidth >= 640 ? 'tablet' : 'mobile'}`)
+  }
+}
+
+// Load appropriate hero image when page loads
+document.addEventListener('DOMContentLoaded', loadHeroImage)
+
+// Handle window resize - load different image if breakpoint changes
+let resizeTimeout
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout)
+  resizeTimeout = setTimeout(loadHeroImage, 150) // Debounce resize events
+})
+
 // Mobile menu functionality
 const mobileMenuButton = document.querySelector('#mobile-menu-button')
 const mobileMenu = document.querySelector('#mobile-menu')
